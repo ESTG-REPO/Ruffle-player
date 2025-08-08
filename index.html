@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos FLASH</title>
+    <meta name="description" content="Jogue jogos clássicos Flash em navegadores modernos. Arquivo de jogos Flash emulados com Ruffle.">
+    <meta name="keywords" content="nitrome, jogos flash, emulador flash, jogos retro, ruffle, jogos nitrome, jogos online">
+    <meta name="author" content="XperiaCDN">
+    <meta property="og:title" content="Emulador Jogos Flash">
+    <meta property="og:description" content="Jogue jogos clássicos do Nitrome em navegadores modernos. Arquivo de jogos Flash emulados com Ruffle.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/default.png">
+    <meta property="og:url" content="https://cdn.xperia.pt/nitrome-games/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese">
+    <link rel="canonical" href="https://cdn.xperia.pt/nitrome-games/">
+    <link rel="alternate" hreflang="pt" href="https://cdn.xperia.pt/nitrome-games/">
+    <link rel="alternate" hreflang="en" href="https://cdn.xperia.pt/nitrome-games/en/">
+    <link rel="alternate" hreflang="x-default" href="https://cdn.xperia.pt/nitrome-games/">
+    <meta name="google" content="notranslate">
+    <link rel="stylesheet" href="styles.css">
+    <script src="ruffle-assets/ruffle.js"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+            <img src="images/logo.svg" alt="Ruffle Logo" class="ruffle-logo">
+        </div>
+        <div class="language-selector">
+            <img src="images/flags/us.svg" alt="English" class="flag-icon flag-us" data-lang="en-us">
+            <img src="images/flags/pt.svg" alt="Português" class="flag-icon flag-pt active" data-lang="pt-pt">
+        </div>
+        <div class="nav-controls">
+            <div class="sample-file">
+                <label for="game-selector">Select Game:</label>
+                <select id="game-selector" class="game-dropdown" aria-label="Select a Nitrome game to play">
+                    <option value="" disabled selected>-- Select Game --</option>
+                    <!-- Game options will be populated dynamically from games.json -->
+                </select>
+            </div>
+            <div class="author-info">
+                <span>Powered by:</span>
+                <a href="https://ruffle.rs/" class="author-link" target="_blank" rel="noopener">ruffle.rs</a>
+                <span>&</span>
+                <a href="https://cloudflare.com/" class="author-link" target="_blank" rel="noopener">Cloudflare</a>
+                <span>&</span>
+                <a href="https://archive.org/" class="author-link" target="_blank" rel="noopener">Archive.org</a>
+            </div>
+        </div>
+        <div class="info-button">
+            <button id="info-btn">i</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="ruffle-container">
+            <div class="player-container" id="ruffle-player">
+                <!-- Ruffle player will be inserted here by JavaScript -->
+            </div>
+            
+            <div class="ruffle-info">
+                <div class="info-panel">
+                    <div class="info-row">
+                        <span class="info-label">Uncompressed Length:</span>
+                        <span class="info-value">69240</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">SWF Version:</span>
+                        <span class="info-value">6</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">FP Version:</span>
+                        <span class="info-value">6</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">ActionScript 3:</span>
+                        <span class="info-value">false</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Total Frames:</span>
+                        <span class="info-value">224</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Frame Rate:</span>
+                        <span class="info-value">51</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">SWF Width:</span>
+                        <span class="info-value">500</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">SWF Height:</span>
+                        <span class="info-value">500</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">SWF Background Color:</span>
+                        <span class="info-value color-box"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

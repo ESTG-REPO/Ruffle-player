@@ -1,0 +1,184 @@
+{
+  "nitromeGames": [
+    {
+      "id": "Final_Ninja",
+      "name": "Final Ninja",
+      "path": "https://cdn.xperia.pt/nitrone-games/Final_Ninja.swf"
+    },
+    {
+      "id": "Hot_Air",
+      "name": "Hot Air",
+      "path": "https://cdn.xperia.pt/nitrone-games/Hot_Air.swf"
+    },
+    {
+      "id": "Hot_Air_2",
+      "name": "Hot Air 2",
+      "path": "https://cdn.xperia.pt/nitrone-games/Hot_Air_2.swf"
+    },
+    {
+      "id": "Frost_Bite",
+      "name": "Frost Bite",
+      "path": "https://cdn.xperia.pt/nitrone-games/Frost_Bite.swf"
+    },
+    {
+      "id": "Cave_Chaos",
+      "name": "Cave Chaos",
+      "path": "https://cdn.xperia.pt/nitrone-games/Cave_Chaos.swf"
+    },
+    {
+      "id": "Thin_Ice",
+      "name": "Thin Ice",
+      "path": "https://cdn.xperia.pt/nitrone-games/Thin_Ice.swf"
+    },
+    {
+      "id": "Chisel",
+      "name": "Chisel",
+      "path": "https://cdn.xperia.pt/nitrone-games/Chisel.swf"
+    },
+    {
+      "id": "Ditto",
+      "name": "Ditto",
+      "path": "https://cdn.xperia.pt/nitrone-games/Ditto.swf"
+    },
+    {
+      "id": "Cheese_Dreams",
+      "name": "Cheese Dreams",
+      "path": "https://cdn.xperia.pt/nitrone-games/Cheese_Dreams.swf"
+    },
+    {
+      "id": "Rubble_Trouble_New_York",
+      "name": "Rubble Trouble New York",
+      "path": "https://cdn.xperia.pt/nitrone-games/Rubble_Trouble_New_York.swf"
+    },
+    {
+      "id": "Nitrome_Must_Die",
+      "name": "Nitrome Must Die",
+      "path": "https://cdn.xperia.pt/nitrone-games/Nitrome_Must_Die.swf"
+    },
+    {
+      "id": "Skywire",
+      "name": "Skywire",
+      "path": "https://cdn.xperia.pt/nitrone-games/Skywire.swf"
+    },
+    {
+      "id": "Bullethead",
+      "name": "Bullethead",
+      "path": "https://cdn.xperia.pt/nitrone-games/Bullethead.swf"
+    },
+    {
+      "id": "Twin_Shot",
+      "name": "Twin Shot",
+      "path": "https://cdn.xperia.pt/nitrone-games/Twin_Shot.swf"
+    },
+    {
+      "id": "Off_The_Rails",
+      "name": "Off The Rails",
+      "path": "https://cdn.xperia.pt/nitrone-games/Off_The_Rails.swf"
+    },
+    {
+      "id": "Mega_Mash",
+      "name": "Mega Mash",
+      "path": "https://cdn.xperia.pt/nitrone-games/Mega_Mash.swf"
+    },
+    {
+      "id": "Flipside",
+      "name": "Flipside",
+      "path": "https://cdn.xperia.pt/nitrone-games/Flipside.swf"
+    },
+    {
+      "id": "Jack_Frost",
+      "name": "Jack Frost",
+      "path": "https://cdn.xperia.pt/nitrone-games/Jack_Frost.swf"
+    },
+    {
+      "id": "Test_Subject_Blue",
+      "name": "Test Subject Blue",
+      "path": "https://cdn.xperia.pt/nitrone-games/Test_Subject_Blue.swf"
+    },
+    {
+      "id": "Gunbrick",
+      "name": "Gunbrick",
+      "path": "https://cdn.xperia.pt/nitrone-games/Gunbrick.swf"
+    },
+    {
+      "id": "Enemy_585",
+      "name": "Enemy 585",
+      "path": "https://cdn.xperia.pt/nitrone-games/Enemy_585.swf"
+    },
+    {
+      "id": "Skywire_2",
+      "name": "Skywire 2",
+      "path": "https://cdn.xperia.pt/nitrone-games/Skywire_2.swf"
+    },
+    {
+      "id": "Cave_Chaos_2",
+      "name": "Cave Chaos 2",
+      "path": "https://cdn.xperia.pt/nitrone-games/Cave_Chaos_2.swf"
+    },
+    {
+      "id": "Twin_Shot_2",
+      "name": "Twin Shot 2",
+      "path": "https://cdn.xperia.pt/nitrone-games/Twin_Shot_2.swf"
+    },
+    {
+      "id": "Hot_Air_Jr",
+      "name": "Hot Air Jr",
+      "path": "https://cdn.xperia.pt/nitrone-games/Hot_Air_Jr.swf"
+    },
+    {
+      "id": "Frost_Bite_2",
+      "name": "Frost Bite 2",
+      "path": "https://cdn.xperia.pt/nitrone-games/Frost_Bite_2.swf"
+    },
+    {
+      "id": "Chisel_2",
+      "name": "Chisel 2",
+      "path": "https://cdn.xperia.pt/nitrone-games/Chisel_2.swf"
+    },
+    {
+      "id": "Test_Subject_Green",
+      "name": "Test Subject Green",
+      "path": "https://cdn.xperia.pt/nitrone-games/Test_Subject_Green.swf"
+    },
+    {
+      "id": "Test_Subject_Complete",
+      "name": "Test Subject Complete",
+      "path": "https://cdn.xperia.pt/nitrone-games/Test_Subject_Complete.swf"
+    },
+    {
+      "id": "Go_Go_Ufo",
+      "name": "Go Go Ufo",
+      "path": "https://cdn.xperia.pt/nitrone-games/Go_Go_Ufo.swf"
+    },
+    {
+      "id": "In_The_Dog_House",
+      "name": "In The Dog House",
+      "path": "https://cdn.xperia.pt/nitrone-games/In_The_Dog_House.swf"
+    },
+    {
+      "id": "Flue",
+      "name": "Flue",
+      "path": "https://cdn.xperia.pt/nitrone-games/Flue.swf"
+    },
+    {
+      "id": "Rubble_Trouble_Moscow",
+      "name": "Rubble Trouble Moscow",
+      "path": "https://cdn.xperia.pt/nitrone-games/Rubble_Trouble_Moscow.swf"
+    },
+    {
+      "id": "Snow_Drift",
+      "name": "Snow Drift",
+      "path": "https://cdn.xperia.pt/nitrone-games/Snow_Drift.swf"
+    },
+    {
+      "id": "Fluffball",
+      "name": "Fluffball",
+      "path": "https://cdn.xperia.pt/nitrone-games/Fluffball.swf"
+    },
+    {
+      "id": "Space_Hopper",
+      "name": "Space Hopper",
+      "path": "https://cdn.xperia.pt/nitrone-games/Space_Hopper.swf"
+    }
+  ]
+}
