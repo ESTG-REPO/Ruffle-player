@@ -118,23 +118,48 @@ async function loadGamesFromJSON() {
             rufflePlayer.classList.remove('mobile-view');
         }
         
-        // Show the default image overlay
-        if (isMobile) {
-            // Mobile version with logo SVG
-            rufflePlayer.innerHTML = `
-                <div class="default-overlay">
-                    <img src="images/logo.svg" alt="${_('nitromeTitleArchive')}" class="logo-mobile">
-                    <p>${_('selectGameToPlay')}</p>
-                </div>
-            `;
-        } else {
-            // Desktop version with default.png
-            rufflePlayer.innerHTML = `
-                <div class="default-overlay">
-                    <img src="images/default.png" alt="${_('nitromeTitleArchive')}">
-                    <p>${_('selectGameToPlay')}</p>
-                </div>
-            `;
+        // Load the Ruffle logo animation by default
+        try {
+            const ruffle = window.RufflePlayer.newest();
+            const player = ruffle.createPlayer();
+            player.id = 'ruffle-instance';
+            rufflePlayer.innerHTML = ''; // Clear any existing content
+            rufflePlayer.appendChild(player);
+            
+            // Load the logo animation SWF file
+            player.load({ 
+                url: 'ruffle-assets/logo-anim.swf', 
+                backgroundColor: "#000000"
+            });
+            
+            // Save reference to the player
+            currentPlayer = player;
+            
+            // Add a message below the player
+            const messageElement = document.createElement('div');
+            messageElement.className = 'default-message';
+            messageElement.textContent = _('selectGameToPlay');
+            rufflePlayer.appendChild(messageElement);
+        } catch (error) {
+            console.error("Failed to initialize default Ruffle player:", error);
+            // Fallback to the static image if loading the SWF fails
+            if (isMobile) {
+                // Mobile version with logo SVG
+                rufflePlayer.innerHTML = `
+                    <div class="default-overlay">
+                        <img src="images/logo.svg" alt="${_('nitromeTitleArchive')}" class="logo-mobile">
+                        <p>${_('selectGameToPlay')}</p>
+                    </div>
+                `;
+            } else {
+                // Desktop version with default.png
+                rufflePlayer.innerHTML = `
+                    <div class="default-overlay">
+                        <img src="images/default.png" alt="${_('nitromeTitleArchive')}">
+                        <p>${_('selectGameToPlay')}</p>
+                    </div>
+                `;
+            }
         }
         
         // Update info panel with ready status
@@ -420,23 +445,48 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
     
-    // Show the default overlay while loading
-    if (isMobile) {
-        // Mobile version with logo SVG
-        rufflePlayer.innerHTML = `
-            <div class="default-overlay">
-                <img src="images/logo.svg" alt="${_('nitromeTitleArchive')}" class="logo-mobile">
-                <p>${_('loadingGames')}</p>
-            </div>
-        `;
-    } else {
-        // Desktop version with default.png
-        rufflePlayer.innerHTML = `
-            <div class="default-overlay">
-                <img src="images/default.png" alt="${_('nitromeTitleArchive')}">
-                <p>${_('loadingGames')}</p>
-            </div>
-        `;
+    // Show the default animation while loading
+    try {
+        const ruffle = window.RufflePlayer.newest();
+        const player = ruffle.createPlayer();
+        player.id = 'ruffle-instance';
+        rufflePlayer.innerHTML = ''; // Clear any existing content
+        rufflePlayer.appendChild(player);
+        
+        // Add a loading message below the player
+        const messageElement = document.createElement('div');
+        messageElement.className = 'default-message';
+        messageElement.textContent = _('loadingGames');
+        rufflePlayer.appendChild(messageElement);
+        
+        // Load the logo animation SWF file
+        player.load({ 
+            url: 'ruffle-assets/logo-anim.swf', 
+            backgroundColor: "#000000"
+        });
+        
+        // Save reference to the player
+        currentPlayer = player;
+    } catch (error) {
+        console.error("Failed to initialize default Ruffle player:", error);
+        // Fallback to the static image if loading the SWF fails
+        if (isMobile) {
+            // Mobile version with logo SVG
+            rufflePlayer.innerHTML = `
+                <div class="default-overlay">
+                    <img src="images/logo.svg" alt="${_('nitromeTitleArchive')}" class="logo-mobile">
+                    <p>${_('loadingGames')}</p>
+                </div>
+            `;
+        } else {
+            // Desktop version with default.png
+            rufflePlayer.innerHTML = `
+                <div class="default-overlay">
+                    <img src="images/default.png" alt="${_('nitromeTitleArchive')}">
+                    <p>${_('loadingGames')}</p>
+                </div>
+            `;
+        }
     }
     
     // Listen for window resize events to update the overlay and mobile class
@@ -450,7 +500,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             rufflePlayer.classList.remove('mobile-view');
         }
         
-        // Only update overlay if no game is loaded and we're showing the default overlay
+        // Only update overlay if no game is loaded and we're showing the default image overlay
         if (!currentGame && rufflePlayer.querySelector('.default-overlay')) {
             const overlay = rufflePlayer.querySelector('.default-overlay');
             const img = overlay.querySelector('img');
@@ -463,6 +513,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                 img.classList.remove('logo-mobile');
             }
         }
+        
+        // Note: we don't need to reload the SWF on resize, Ruffle handles this automatically
     });
     
     // Show info panel by default
