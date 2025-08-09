@@ -159,7 +159,7 @@ main {
 /* Player container styles */
 .player-container {
   flex: 1;
-  background-color: var(--ruffle-white);
+  background-color: var(--ruffle-black);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -363,6 +363,29 @@ ruffle-player {
 
 .flag-icon:hover, .flag-icon.active {
   border-color: var(--ruffle-yellow);
+}
+
+/* Default message for SWF player */
+.default-message {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--ruffle-white);
+  font-size: 16px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+/* Mobile styling for default message */
+@media (max-width: 768px) {
+  .default-message {
+    font-size: 14px;
+    padding: 8px;
+    bottom: 10px;
+  }
 }
 
 /* Ruffle player specific styles */
