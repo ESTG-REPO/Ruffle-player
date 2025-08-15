@@ -31,8 +31,20 @@
             to: 'https://cdn.xperia.pt/laserquest/nov.swf'
         },
         {
-            from: 'https://www.laserquest.pt/LaserQuest_Folheto.pdf',
-            to: 'https://cdn.xperia.pt/laserquest/LaserQuest_Folheto.pdf'
+            from: 'https://jogos.ipv7.pt/jogo.swf',
+            to: 'https://cdn.xperia.pt/laserquest/jogo.swf'
+        },
+        {
+            from: 'https://jogos.ipv7.pt/contact.swf',
+            to: 'https://cdn.xperia.pt/laserquest/contact.swf'
+        },
+        {
+            from: 'https://jogos.ipv7.pt/centro.swf',
+            to: 'https://cdn.xperia.pt/laserquest/centro.swf'
+        },
+        {
+            from: 'https://jogos.ipv7.pt/activ.swf',
+            to: 'https://cdn.xperia.pt/laserquest/activ.swf'
         }
     ];
 
