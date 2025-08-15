@@ -26,3 +26,5 @@ The Nitrome games included in this archive are the intellectual property of thei
 - [Archive.org](https://archive.org/): Source for preserved Flash games
 - [Nitrome](https://www.nitrome.com/): Original creators of these amazing Flash games
 
+## DOCS
+- [ADDITIONAL DOCUMENTATION IN /docs]

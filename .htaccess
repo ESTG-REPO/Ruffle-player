@@ -1,0 +1,35 @@
+# Enable rewriting
+RewriteEngine On
+
+# If the request is for an existing file, directory, or link, don't rewrite
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d [OR]
+RewriteCond %{REQUEST_FILENAME} -l
+RewriteRule ^ - [L]
+
+# Rewrite requests for these known file extensions to the actual files
+RewriteRule \.(css|js|png|jpg|jpeg|gif|ico|swf|json|svg|ttf|woff|woff2|eot)$ - [L]
+
+# For all other requests, rewrite to index.html
+RewriteRule ^([^/]+)/?$ index.html [L]
+
+# Set cache headers for SWF files to improve performance
+<FilesMatch "\.swf$">
+    Header set Cache-Control "max-age=86400, public"
+</FilesMatch>
+
+# Enable CORS for SWF files
+<FilesMatch "\.swf$">
+    Header set Access-Control-Allow-Origin "*"
+</FilesMatch>
+
+# Disable directory listings
+Options -Indexes
+
+# Set default character set
+AddDefaultCharset UTF-8
+
+# Compression for better performance
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json
+</IfModule>
