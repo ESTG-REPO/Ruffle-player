@@ -26,7 +26,9 @@
     "game": "Game:",
     "swfPath": "SWF Path:",
     "publisher": "Publisher:",
-    "nitrome": "Nitrome"
+    "nitrome": "Nitrome",
+    "shareButton": "Share",
+    "shareSuccess": "Game URL copied to clipboard. Share with your friends!"
   },
   "pt-pt": {
     "selectFile": "Selecionar Ficheiro:",
@@ -55,6 +57,8 @@
     "game": "Jogo:",
     "swfPath": "Caminho SWF:",
     "publisher": "Editor:",
-    "nitrome": "Nitrome"
+    "nitrome": "Nitrome",
+    "shareButton": "Partilhar",
+    "shareSuccess": "Jogo copiado para a área de transferência, partilha no WhatsApp com os teus amigos!!"
   }
 }
