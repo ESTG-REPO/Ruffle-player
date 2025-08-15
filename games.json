@@ -720,6 +720,11 @@
       "name": "Saturday Morning Watchmen",
       "path": "https://cdn.xperia.pt/demos/saturday_morning_watchmen.swf"
     }
+    {
+      "id": "Laserquest",
+      "name": "laserquest",
+      "path": "https://cdn.xperia.pt/laserquest/Laserquest.swf"
+    }
   ]
 }
 
