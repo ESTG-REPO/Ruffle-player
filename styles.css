@@ -1,0 +1,416 @@
+/* Ruffle UI theme colors based on screenshots */
+:root {
+  /* Main Ruffle colors */
+  --ruffle-blue: #2F5391;
+  --ruffle-dark-blue: #283C66;
+  --ruffle-darker-blue: #1E2E4E;
+  --ruffle-light-blue: #375B9F;
+  --ruffle-lighter-blue: #3A6DB0;
+  --ruffle-header-blue: #334E81;
+  --ruffle-panel-blue: #334F85;
+  --ruffle-info-blue: #2A416C;
+  --ruffle-border-blue: #1D2A45;
+  --ruffle-yellow: #FFD54F;
+  --ruffle-white: #FFFFFF;
+  --ruffle-black: #000000;
+  --ruffle-gray: #333333;
+  --ruffle-light-gray: #CCCCCC;
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--ruffle-black);
+  color: var(--ruffle-white);
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+/* Navigation bar styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--ruffle-header-blue);
+  height: 40px;
+  padding: 0 10px;
+  border-bottom: 1px solid var(--ruffle-border-blue);
+  color: var(--ruffle-white);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.ruffle-logo {
+  height: 25px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 12px;
+}
+
+.file-selector, .sample-file, .author-info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.file-name, .author-link {
+  color: var(--ruffle-white);
+  text-decoration: none;
+}
+
+.author-link {
+  text-decoration: underline;
+}
+
+.game-dropdown {
+  background-color: var(--ruffle-darker-blue);
+  color: var(--ruffle-white);
+  border: 1px solid var(--ruffle-border-blue);
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 12px;
+  cursor: pointer;
+  max-width: 180px;
+}
+
+.game-dropdown:focus {
+  outline: 1px solid var(--ruffle-yellow);
+  border-color: var(--ruffle-yellow);
+}
+
+.game-dropdown optgroup {
+  background-color: var(--ruffle-darker-blue);
+  color: var(--ruffle-yellow);
+  font-weight: bold;
+}
+
+.game-dropdown option {
+  background-color: var(--ruffle-darker-blue);
+  color: var(--ruffle-white);
+  padding: 4px;
+}
+
+.sample-file label {
+  margin-right: 5px;
+  color: var(--ruffle-white);
+}
+
+.info-button button {
+  background: var(--ruffle-darker-blue);
+  color: var(--ruffle-white);
+  border: 1px solid var(--ruffle-border-blue);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Main content styles */
+main {
+  display: flex;
+  height: calc(100vh - 40px);
+}
+
+.ruffle-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* File selector styles have been removed */
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ruffle-darker-blue);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ruffle-light-blue);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ruffle-lighter-blue);
+}
+
+/* Player container styles */
+.player-container {
+  flex: 1;
+  background-color: var(--ruffle-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Mobile-specific player container */
+.player-container.mobile-view {
+  background-color: var(--ruffle-header-blue);
+}
+
+/* Default image overlay */
+.default-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ruffle-black);
+  text-align: center;
+}
+
+.default-overlay img {
+  max-width: 100%;
+  max-height: 70%;
+  object-fit: contain;
+}
+
+.default-overlay p {
+  margin-top: 20px;
+  padding: 0 20px;
+  color: var(--ruffle-white);
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 80%;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Mobile default overlay styles */
+@media (max-width: 768px) {
+  .default-overlay {
+    background-color: var(--ruffle-header-blue);
+    padding: 20px;
+  }
+  
+  .default-overlay .logo-mobile {
+    width: 160px;
+    height: auto;
+    margin-bottom: 30px;
+  }
+  
+  .default-overlay p {
+    font-size: 16px;
+    margin-top: 0;
+  }
+
+  /* For the player container with mobile-view class */
+  .player-container.mobile-view .default-overlay {
+    background-color: var(--ruffle-header-blue);
+  }
+  
+  /* Special styling for logo when in mobile view */
+  .player-container.mobile-view .logo-mobile {
+    width: 180px;
+    height: auto;
+    margin-bottom: 30px;
+  }
+}
+
+ruffle-player {
+  width: 100%;
+  height: 100%;
+}
+
+/* Info panel styles */
+.ruffle-info {
+  width: 160px;
+  background-color: var(--ruffle-info-blue);
+  border-left: 1px solid var(--ruffle-border-blue);
+  padding: 10px;
+  font-size: 12px;
+  overflow-y: auto;
+}
+
+.info-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-label {
+  color: var(--ruffle-white);
+  font-weight: bold;
+}
+
+.info-value {
+  color: var(--ruffle-light-gray);
+}
+
+.color-box {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border: 1px solid var(--ruffle-border-blue);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar {
+    height: auto;
+    min-height: 40px;
+    padding: 8px;
+    flex-wrap: wrap;
+  }
+  
+  .logo-container {
+    flex: 0 0 auto;
+    margin-right: 10px;
+  }
+  
+  .language-selector {
+    flex: 0 0 auto;
+    margin-right: 10px;
+    order: 2;
+  }
+  
+  .nav-controls {
+    flex: 1 0 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px 0;
+    gap: 8px;
+    order: 3;
+  }
+  
+  .info-button {
+    flex: 0 0 auto;
+    order: 1;
+  }
+  
+  .ruffle-info {
+    width: 100%;
+    max-height: 200px;
+    border-left: none;
+    border-top: 1px solid var(--ruffle-border-blue);
+  }
+  
+  .ruffle-container {
+    flex-direction: column;
+  }
+  
+  .player-container {
+    flex: 1 1 auto;
+    min-height: 60vh;
+  }
+  
+  main {
+    height: calc(100vh - 120px);
+    overflow-y: auto;
+  }
+  
+  .default-overlay {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .default-overlay p {
+    margin-top: 15px;
+    padding: 0 15px;
+    color: var(--ruffle-white);
+  }
+}
+
+/* Language flag styles */
+.language-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 10px;
+}
+
+.flag-icon {
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.flag-icon:hover, .flag-icon.active {
+  border-color: var(--ruffle-yellow);
+}
+
+/* Default message for SWF player */
+.default-message {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--ruffle-white);
+  font-size: 16px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+/* Mobile styling for default message */
+@media (max-width: 768px) {
+  .default-message {
+    font-size: 14px;
+    padding: 8px;
+    bottom: 10px;
+  }
+}
+
+/* Ruffle player specific styles */
+ruffle-player {
+  width: 100%;
+  height: 100%;
+}
+
+/* Additional styling for messages */
+.error-message {
+  color: #ff5555;
+  font-size: 14px;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(50, 0, 0, 0.3);
+  border-radius: 5px;
+  margin: 20px;
+}
+
+.loading-message {
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 50, 100, 0.3);
+  border-radius: 5px;
+  margin: 20px;
+}
