@@ -401,6 +401,9 @@ function handleGameSelection() {
     }
 }
 
+    // Expose loadGame function globally so it can be used by game-url-loader.js
+    window.loadGame = loadGame;
+
 // Initialize the application
 document.addEventListener('DOMContentLoaded', async () => {
     // Set up Ruffle configuration

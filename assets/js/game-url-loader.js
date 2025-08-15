@@ -268,6 +268,34 @@
      * Load a specific game into the page
      */
     function loadGame(game) {
+        // Determine the game file path
+        const gamePath = game.path || game.url || game.src || `games/${game.id}.swf`;
+        
+        // Update page title with game name
+        if (game.name) {
+            document.title = `${game.name} - ${document.title.split(' - ')[1] || 'Flash Games'}`;
+        }
+        
+        // Check if we're on the main page with the default Ruffle player
+        const mainRufflePlayer = document.getElementById('ruffle-player');
+        const mainLoadGameFunction = window.loadGame;
+        
+        if (mainRufflePlayer && typeof mainLoadGameFunction === 'function') {
+            // We're on the main page, use the main site's loadGame function
+            Logger.info('Using main page Ruffle player');
+            
+            // Call the main page's loadGame function
+            mainLoadGameFunction(game.id);
+            
+            // Create a game info element
+            createGameInfoElement(game);
+            
+            // Dispatch a custom event that the game was loaded
+            window.dispatchEvent(new CustomEvent('gameLoaded', { detail: { game } }));
+            return;
+        }
+        
+        // Fallback to our own implementation if not on the main page
         // Get the game container or create it if it doesn't exist
         let container = document.querySelector(CONFIG.gameContainerSelector);
         if (!container) {
@@ -290,14 +318,6 @@
             
             Logger.info('Created game container element');
         }
-        
-        // Update page title with game name
-        if (game.name) {
-            document.title = `${game.name} - ${document.title.split(' - ')[1] || 'Flash Games'}`;
-        }
-        
-        // Determine the game file path
-        const gamePath = game.path || game.url || game.src || `games/${game.id}.swf`;
         
         // Function to actually load the game
         const loadWithRuffle = () => {
@@ -328,22 +348,7 @@
                     player.load(gamePath, playerOptions);
                     
                     // Create a game info element
-                    const infoElement = document.createElement('div');
-                    infoElement.className = 'game-info';
-                    infoElement.innerHTML = `
-                        <h2>${game.name || game.id}</h2>
-                        ${game.description ? `<p>${game.description}</p>` : ''}
-                        <p class="share-link">Share this game: <a href="${window.location.origin}/${encodeURIComponent(game.id)}">${window.location.origin}/${game.id}</a></p>
-                    `;
-                    
-                    // Find a place to put the info element (outside the container to not interfere with the game)
-                    const infoContainer = document.querySelector('#game-info') || document.createElement('div');
-                    if (!document.querySelector('#game-info')) {
-                        infoContainer.id = 'game-info';
-                        container.parentNode.insertBefore(infoContainer, container.nextSibling);
-                    }
-                    infoContainer.innerHTML = '';
-                    infoContainer.appendChild(infoElement);
+                    createGameInfoElement(game);
                     
                     // Dispatch a custom event that the game was loaded
                     window.dispatchEvent(new CustomEvent('gameLoaded', { detail: { game } }));
@@ -414,22 +419,7 @@
                     container.parentNode.insertBefore(warning, container.nextSibling);
                     
                     // Create a game info element
-                    const infoElement = document.createElement('div');
-                    infoElement.className = 'game-info';
-                    infoElement.innerHTML = `
-                        <h2>${game.name || game.id}</h2>
-                        ${game.description ? `<p>${game.description}</p>` : ''}
-                        <p class="share-link">Share this game: <a href="${window.location.origin}/${encodeURIComponent(game.id)}">${window.location.origin}/${game.id}</a></p>
-                    `;
-                    
-                    // Find a place to put the info element
-                    const infoContainer = document.querySelector('#game-info') || document.createElement('div');
-                    if (!document.querySelector('#game-info')) {
-                        infoContainer.id = 'game-info';
-                        container.parentNode.insertBefore(infoContainer, container.nextSibling);
-                    }
-                    infoContainer.innerHTML = '';
-                    infoContainer.appendChild(infoElement);
+                    createGameInfoElement(game);
                     
                     // Dispatch a custom event that the game was loaded
                     window.dispatchEvent(new CustomEvent('gameLoaded', { detail: { game } }));
@@ -439,6 +429,34 @@
         
         // Start the loading process
         loadWithRuffle();
+    }
+    
+    /**
+     * Helper function to create game info element
+     */
+    function createGameInfoElement(game) {
+        // Create a game info element
+        const infoElement = document.createElement('div');
+        infoElement.className = 'game-info';
+        infoElement.innerHTML = `
+            <h2>${game.name || game.id}</h2>
+            ${game.description ? `<p>${game.description}</p>` : ''}
+            <p class="share-link">Share this game: <a href="${window.location.origin}/${encodeURIComponent(game.id)}">${window.location.origin}/${game.id}</a></p>
+        `;
+        
+        // Find a place to put the info element (outside the container to not interfere with the game)
+        const infoContainer = document.querySelector('#game-info') || document.createElement('div');
+        if (!document.querySelector('#game-info')) {
+            infoContainer.id = 'game-info';
+            const container = document.querySelector(CONFIG.gameContainerSelector);
+            if (container && container.parentNode) {
+                container.parentNode.insertBefore(infoContainer, container.nextSibling);
+            } else {
+                document.body.appendChild(infoContainer);
+            }
+        }
+        infoContainer.innerHTML = '';
+        infoContainer.appendChild(infoElement);
     }
     
     /**
