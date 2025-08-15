@@ -29,6 +29,10 @@
         {
             from: 'https://jogos.ipv7.pt/nov.swf',
             to: 'https://cdn.xperia.pt/laserquest/nov.swf'
+        },
+        {
+            from: 'https://www.laserquest.pt/LaserQuest_Folheto.pdf',
+            to: 'https://cdn.xperia.pt/laserquest/LaserQuest_Folheto.pdf'
         }
     ];
 
