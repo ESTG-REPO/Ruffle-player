@@ -1,7 +1,7 @@
 /**
- * Game Loader Enhancer
+ * PATCH 1.0
  * 
- * This module extends the functionality of the game-url-loader.js without modifying it.
+ * Update patch for url-engine.js
  * It adds the following improvements:
  * 
  * 1. URL Handling and SEO Improvements
@@ -20,7 +20,7 @@
  */
 
 (function() {
-    console.log('[Game Loader Enhancer] Initializing...');
+    console.log('[Patch 1.0] Initializing...');
     
     // Configuration
     const CONFIG = {
@@ -50,10 +50,10 @@
     
     // Logging utility
     const Logger = {
-        error: (msg) => CONFIG.LOG_LEVEL >= 1 && console.error('[Game Loader Enhancer]', msg),
-        warn: (msg) => CONFIG.LOG_LEVEL >= 2 && console.warn('[Game Loader Enhancer]', msg),
-        info: (msg) => CONFIG.LOG_LEVEL >= 3 && console.info('[Game Loader Enhancer]', msg),
-        debug: (msg) => CONFIG.LOG_LEVEL >= 4 && console.debug('[Game Loader Enhancer]', msg)
+        error: (msg) => CONFIG.LOG_LEVEL >= 1 && console.error('[patch 1.0]', msg),
+        warn: (msg) => CONFIG.LOG_LEVEL >= 2 && console.warn('[patch 1.0]', msg),
+        info: (msg) => CONFIG.LOG_LEVEL >= 3 && console.info('[patch 1.0]', msg),
+        debug: (msg) => CONFIG.LOG_LEVEL >= 4 && console.debug('[patch 1.0]', msg)
     };
     
     // Reference to the original GameUrlLoader API
@@ -65,7 +65,7 @@
     function initialize() {
         // Wait for the original loader to be available
         if (!window.GameUrlLoader) {
-            Logger.debug('Waiting for original GameUrlLoader to be available...');
+            Logger.debug('checking url-engine is loaded...');
             setTimeout(initialize, 100);
             return;
         }
@@ -82,7 +82,7 @@
         // Apply URL parameters on initial load
         processUrlParameters();
         
-        Logger.info('Game Loader Enhancer initialized successfully');
+        Logger.info('Patch 1.0 loaded successfully');
     }
     
     /**

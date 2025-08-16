@@ -273,6 +273,18 @@ function updateInfoPanel(gameId, gamePath, gameName) {
                 <span class="info-label">${_('source')}</span>
                 <span class="info-value">cdn.xperia.pt</span>
             </div>
+            <div class="author-info">
+                <span>Powered by:</span>
+                <a href="https://ruffle.rs/" class="author-link" target="_blank" rel="noopener">ruffle.rs</a>
+                <span>&</span>
+                <a href="https://cloudflare.com/" class="author-link" target="_blank" rel="noopener">Cloudflare</a>
+                <span>&</span>
+                <a href="https://archive.org/" class="author-link" target="_blank" rel="noopener">Archive.org</a>
+                <span>&</span>
+                <a href="https://github.com/ruffle-rs" class="author-link" target="_blank" rel="noopener">All Ruffle supporters</a>
+                </div>
+            </div>
+        </div>
         `;
         infoPanel.innerHTML = infoHTML;
         return;

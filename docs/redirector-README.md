@@ -33,23 +33,6 @@ When any of these methods try to access the original URLs, the module transparen
 
 2. Make sure this script loads before any game scripts that might request the redirected URLs.
 
-## Usage with Ruffle
-
-When using with Ruffle emulator:
-
-```html
-<!-- First load the redirector -->
-<script src="js/redirector.js"></script>
-
-<!-- Then load Ruffle -->
-<script src="path/to/ruffle.js"></script>
-
-<!-- Then load or embed your Flash games -->
-<div id="game-container">
-    <!-- Your game embed code here -->
-</div>
-```
-
 ## Verifying It Works
 
 Open your browser's developer console (F12) to see log messages showing when requests are intercepted and redirected. You should see messages like:
