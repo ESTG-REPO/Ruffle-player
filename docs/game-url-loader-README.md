@@ -1,4 +1,4 @@
-# Game URL Loader
+# URL-ENGINE.js
 
 This JavaScript module enables direct game loading via URLs like `jogos.ipv7.pt/<gamename>`, allowing users to share links to specific games without having to navigate through a game selection interface.
 
@@ -114,3 +114,4 @@ location / {
 ## Example
 
 See `game-loader-example.html` for a working example of how to implement the loader with a game gallery.
+
