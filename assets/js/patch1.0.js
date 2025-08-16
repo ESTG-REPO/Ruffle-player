@@ -532,25 +532,7 @@
             offlineIndicator.style.display = 'none';
         }
     }
-    
-    /**
-     * Register a service worker for offline support
-     */
-    function registerServiceWorker() {
-        if ('serviceWorker' in navigator) {
-            // Register the service worker
-            navigator.serviceWorker.register('/sw.js')
-                .then(registration => {
-                    Logger.info('Service Worker registered with scope:', registration.scope);
-                })
-                .catch(error => {
-                    Logger.error('Service Worker registration failed:', error);
-                });
-        } else {
-            Logger.warn('Service Worker is not supported in this browser');
-        }
-    }
-    
+       
     /**
      * Initialize network status monitoring
      */
