@@ -11,7 +11,6 @@
  * 
  * 2. Performance Enhancements
  *    - Local Storage Caching
- *    - Service Worker Integration
  * 
  * 3. Error Handling and Resilience
  *    - Enhanced Error Recovery
@@ -76,9 +75,6 @@
         
         // Override the original GameUrlLoader with enhanced version
         extendOriginalLoader();
-        
-        // Register service worker if browser supports it
-        registerServiceWorker();
         
         // Initialize network status monitoring
         initNetworkMonitoring();
@@ -155,7 +151,7 @@
             // Try to load from cache if available
             const cachedGames = getCachedGamesData();
             if (cachedGames && cachedGames[gameId.toLowerCase()]) {
-                // We can still try to load the game if it's cached by the service worker
+                // We can still try to load the game if it's cached
                 Logger.info(`Attempting to load cached game: ${gameId}`);
             } else {
                 Logger.error(`Cannot load game while offline: ${gameId}`);
